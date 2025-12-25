@@ -157,6 +157,6 @@ If you found some of this information usuful and would like to buy me a coffee y
 
 or you can just say thank you below at
 
-pmatsakos @ gmail . com
+[pmatsakos@gmail.com](mailto:pmatsakos@gmail.com)
 
 
