@@ -34,7 +34,7 @@ The whole project begun as an idea for a gift for a good friend of mine Nikos. N
 The gaming platforms back then was either a computer system, a computer console or an arcade coin-op. Should I name a few ? Think of Atari, Amstrad, Commodore, Amiga, PCs etc.
 Together we used to play endless hours , side by side, be it as opponents or cooperatively to get through to the next game level. The games back then, because of the limited computation resources were simple enough, designed to be played with only a few moves, left-right maybe up-down or with a use of an action.
 This quickly spawned the joystick, a handle that could be used as an interface device to give the player a way to easily control the action figure, away from the bulky keyboard buttons of these computer systems.
-Although not so popular abroad, in Greece were we both grew up, more than a couple of companies started creating joysticks insped from the ease of use and quality of the arcade coin-op machines of the era. You can check some of these joysticks in this blog here [Greek Joysticks] (https://binaryvalue.com/index.php/retro-stuff/our-blog/greek-sticks)
+Although not so popular abroad, in Greece were we both grew up, more than a couple of companies started creating joysticks insped from the ease of use and quality of the arcade coin-op machines of the era. You can check some of these joysticks in this blog here [Greek Joysticks](https://binaryvalue.com/index.php/retro-stuff/our-blog/greek-sticks)
 The feeling and amusement of playing on those joysticks was unforgetable. 
 
 Unfortunately my pal Nikos and I live in different continents and do not see each other often. Once a year we get to meet and have fun discussing computer games in general. After all we're still active gamers to this day. During our last encounter
@@ -45,9 +45,11 @@ Searching the internet I was dissapointed to find out that such joysticks or sti
 Being a 3D printing nerd, a maker and a tinkerer I instantly had the idea to create something that could revive the feeling I was missing.
 I bought a couple of barebones arcade style sticks and experimented with different sized boxes until I felt I was holding the right dimentions. Behold the Renegade stick.
 
-The joystick was named after one of our famorite games on Amstrad, Target Renegade. 
-[Target Renegade on Wikipedia] (https://en.wikipedia.org/wiki/Target:_Renegade) 
-[Target Renegade on Amstrad CPC Youtube longplay] (https://www.youtube.com/watch?v=2ePhicu4iZM)
+The joystick was named after one of our famorite games on Amstrad, Target Renegade.
+
+[Target Renegade on Wikipedia](https://en.wikipedia.org/wiki/Target:_Renegade) 
+
+[Target Renegade on Amstrad CPC Youtube longplay](https://www.youtube.com/watch?v=2ePhicu4iZM)
 
 I created this joystick as a present for Nikos who is a collector of Amstrad and other computer games memorabilia.
 Since I gone this far in creating it, why not offer everything publicly/open to any arcade fans like you who may want to try building one.
