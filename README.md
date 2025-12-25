@@ -151,11 +151,11 @@ LED indicators
 
 
 # Liked it ?
-If you found some of this information usuful and would like to buy me a coffee you can here
+If you found some of this information usuful and would like to buy me a coffee you can donate below
 
 [![Donate with PayPal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.me/mach0gr)
 
-or you can just say thank you below at
+or you can just say thank you at
 
 [pmatsakos@gmail.com](mailto:pmatsakos@gmail.com)
 
