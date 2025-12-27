@@ -9,24 +9,22 @@ Who is it for ?
 ---------------
 Retro game enthusiasts, gamers, makers, tinkerers
 
-Where can be used ?
+Where can I use it ?
 -------------------
 Wherever there is bluetooth HID support.
 Retro emulators such as Retro Pi, Recalbox etc, Mobile Phones, PCs, steam box, modern Game Consoles like playstastion etc
 
+Where can I get it ?
+--------------------
+This is not sold as a whole, you have to 3D print it, source a few parts and build it yourself.
+
 What do I need to build it ?
 ----------------------------
 1. Own or have access to a 3D printer
-2. Source or purchase a few building materials such as an ESP32 board, a Li-Po battery, microswitches, hook-up wires, screws etc
+2. Source or purchase some of the required parts like an ESP32 board, a Li-Po battery, microswitches, hook-up wires, screws etc
 3. Basic soldering (for hooking up wires)
 4. Love building things, patience
 Read on for instructions
-
-Can I buy it somewhere ?
-------------------------
-No. This is neither sold as parts nor you can buy it ready made, you have to build it yourself.
-I'm providing you all the information to source the materials, print the necessary parts and complete the build yourself.
-Building it is half the fun (the other half is enjoying playing your favourite games with it)
 
 The Story behind Renagade Stick
 -------------------------------
