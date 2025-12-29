@@ -74,6 +74,9 @@ Again, Link 1 was my source but not sure if grobotronics are able to ship worldw
 | FireBeetle2 ESP32-C6 (DFR1075) | 1 | Select only ONE of these 3 board. All have been tested to work. Prefer ESP32-C6 being cheaper, more modern and future rich. Make sure you buy one of the exact DFR codes. | [grobotronics](https://grobotronics.com/firebeetle-2-esp32-c6-wi-fi-6-bluetooth-5-solar-powered.html) | [DFrobot](https://www.dfrobot.com/product-2771.html) |
 | FireBeetle2 ESP32-S3(N4) (DFR1145) | 1 | Select only ONE of these 3 board. All have been tested to work. Prefer ESP32-C6 being cheaper, more modern and future rich. Make sure you buy one of the exact DFR codes. | [grobotronics](https://grobotronics.com/firebeetle-2-esp32-s3-n4.html) | [DFrobot](https://www.dfrobot.com/product-2836.html) |
 | FireBeetle2 ESP32-E N16R2 (DFR1139) | 1 | Select only ONE of these 3 board. All have been tested to work. Prefer ESP32-C6 being cheaper, more modern and future rich. Make sure you buy one of the exact DFR codes. | [grobotronics](https://grobotronics.com/firebeetle-2-esp32-c6-wi-fi-6-bluetooth-5-solar-powered.html) | [DFrobot](https://www.dfrobot.com/product-2837.html) |
+| Quick Disconnect - Female Bare 2.8mm | 16 | OPTIONAL item Only needed if you don’t wish to solder the microswitch terminals. The 2.8mm version is for microswitches | [grobotronics](https://grobotronics.com/quick-disconnect-female-bare-2.8mm-bag-of-100.html) |
+
+| Quick Disconnect - Female Bare 4.8mm | 8 | OPTIONAL item Only needed if you don’t wish to solder the microswitch terminals. The 4.8mm version is for the joystick assembly | [grobotronics](https://grobotronics.com/quick-disconnect-female-bare-4.8mm-bag-of-100.html) |
 
 
 Regarding the DFRobot ESP boards, I have successfully tested all 3 different boards above and the source code I'm offering I have made it compatible with all three of them.
