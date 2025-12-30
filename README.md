@@ -202,7 +202,7 @@ Everytime the device switches off it will not keep the this setting and when wok
 
 Testing the Device
 ------------------
-On a PC/MAC you can test your device online directly on [hardwaretester.com](https://hardwaretester.com/gamepad)
+On a PC/MAC you can test your device online directly on [hardwaretester.com](https://hardwaretester.com/gamepad)  
 On an Android Device you can download the following app [Gamepad Tester](https://play.google.com/store/apps/details?id=com.chimera.saturday.evogamepadtester)
 
 <br>
