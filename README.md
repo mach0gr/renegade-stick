@@ -15,6 +15,7 @@ License
 All 3D printed hardware part files Licensed under [Open Community License (OCL)](https://github.com/OpenCommunityLicence/OpenCommunityLicence) and are available on [printables.com](https://www.printables.com/model/1532850-renegade-stick)<br>
 Software code hereby is Licensed under the [GPL-3.0 License](LICENSE)<br>
 Part of the code is based on the [ESP32-BLE-Gamepad library by lemmingDev](https://github.com/lemmingDev) distributed under the [MIT license](https://github.com/lemmingDev/ESP32-BLE-Gamepad/blob/master/license.txt)<br>
+The above project is based on [ESP32](http://esp32.net) chip and specifically a Firebeetle Board from [DFRobot](https://www.dfrobot.com/topic-302.html)
 The project hereby is solely for instructional and entertainment use. <br>
 The item as a complete unit or the 3D printed parts it consists from are not sold and may not be sold without written permission from author. <br>
 Please be careful, especially with Li-Po batteries—they can be dangerous if mishandled. Take your time and stay safe!
@@ -48,6 +49,11 @@ Read on for instructions
 
 Specifications
 --------------
+
+Dual axis axis joystick
+8 buttons
+Bluetooth HID gamepad device
+Rechargeable Battery
 
 
 The Story behind Renagade Stick
