@@ -20,8 +20,29 @@ This project is solely for instructional and entertainment purposes. <br>
 The item as a complete unit or the 3D-printed parts it consists of are not sold and may not be sold without written permission from author. <br>
 Please be careful, especially with Li-Po batteries—they can be dangerous if mishandled. Take your time and stay safe!
 
+<br>
 
+## Table of Contents
 
+- [Who Is This Project For?](#who-is-this-project-for)
+- [Where Can I Use It?](#where-can-i-use-it)
+- [Where Can I Get It?](#where-can-i-get-it)
+- [What Do I Need to Build It?](#what-do-i-need-to-build-it)
+- [Specifications](#specifications)
+- [The Story Behind Renegade Stick](#the-story-behind-renegade-stick)
+- [Bill of Materials](#bill-of-materials)
+- [Assembly Instructions](#assembly-instructions)
+- [Operating Instructions](#operating-instructions)
+  - [Charging the Renegade Stick](#charging-the-renegade-stick)
+  - [Turn the Device On](#turn-the-device-on)
+  - [Pairing the Renegade Stick](#pairing-the-renegade-stick)
+- [Button Mapping](#button-mapping)
+- [Mode of Operation](#mode-of-operation)
+- [Testing the Device](#testing-the-device)
+- [LED Indicators](#led-indicators)
+- [Liked It?](#liked-it)
+
+<br>
 
 Who is this project for ?
 ----------------------------
