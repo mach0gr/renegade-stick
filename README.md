@@ -193,17 +193,17 @@ On some consoles the default mapping is the following but it may differ on your 
 
 Mode of Operation
 -----------------
-The device has two modes of operation DPAD mode and dual Axis mode. Dual axis mode is ment to be used by analogue controllers but some games depend on axis control. Other games are easier to be played on DPAD mode.
+The device has **two modes** of operation DPAD mode and dual Axis mode. Dual axis mode is ment to be used by analogue controllers but some games depend on axis control. Other games are easier to be played on DPAD mode.
 You can instantly switch between modes by pressing all 6 buttons on top at the same time for at least 2 seconds. The device needs to be paired. You will notice the **Green LED** blinking at a different rate.
 You can verify this using gamepad testers like below.
-Everytime the device switches off it will not keep the this setting and when woken up by default will enter axis mode.
+Everytime the device switches off it will not keep the this setting and when woken up **by default will enter axis mode**.
 
 <br>
 
 Testing the Device
 ------------------
-On a PC/MAC you can test your device online directly on [hardwaretester.com](https://hardwaretester.com/gamepad)  
-On an Android Device you can download the following app [Gamepad Tester](https://play.google.com/store/apps/details?id=com.chimera.saturday.evogamepadtester)
+On a **PC/MAC** you can test your device online directly on [hardwaretester.com](https://hardwaretester.com/gamepad)  
+On an **Android** Device you can download the following app [Gamepad Tester](https://play.google.com/store/apps/details?id=com.chimera.saturday.evogamepadtester)
 
 <br>
 
