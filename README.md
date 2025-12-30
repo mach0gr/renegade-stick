@@ -1,7 +1,7 @@
 Renerage Stick
 ==============
 
-An arcade, retro style, wireless bluetooth joystick.
+A DIY arcade, retro style, wireless bluetooth joystick.
 
 ![Renegade Stick](/photos/IMG20251226114752.jpg)
 
@@ -9,6 +9,19 @@ This repository includes all the necessary code, bill of materials, instructions
 The 3D printable files can be found on [printables.com](https://www.printables.com/model/1532850-renegade-stick/edit)
 
 <br>
+
+License
+-------
+All 3D printed hardware part files Licensed under [Open Community License (OCL)](https://github.com/OpenCommunityLicence/OpenCommunityLicence) and are available on [printables.com](https://www.printables.com/model/1532850-renegade-stick)<br>
+Software code hereby is Licensed under the [GPL-3.0 License](licence.txt)<br>
+Part of the code is based on the [ESP32-BLE-Gamepad library by lemmingDev](https://github.com/lemmingDev) distributed under the [MIT license](https://github.com/lemmingDev/ESP32-BLE-Gamepad/blob/master/license.txt)<br>
+The project hereby is solely for instructional and entertainment use. 
+The item as a complete unit or the 3D printed parts it consists from are not sold and may not be sold without written permission from author. 
+<br>
+Please be careful, especially with Li-Po batteries—they can be dangerous if mishandled. Take your time and stay safe!
+
+
+
 
 Who is this project it for ?
 ----------------------------
@@ -33,6 +46,10 @@ What do I need to build it ?
 Read on for instructions
 
 <br>
+
+Specifications
+--------------
+
 
 The Story behind Renagade Stick
 -------------------------------
