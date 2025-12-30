@@ -1,6 +1,6 @@
 # Flashing Guide for ESP32‑C6 DFR1075 (v0.1 Chips)
 
-Flashing ESP32‑C6 v0.1 chips isn’t as straightforward as with newer ESP boards.  
+Flashing ESP32‑C6 v0.1 chips isn’t as straightforward.  
 On the two v0.1 boards I tested, **automatic USB reset does not work**, so you must manually enter programming mode using the **BOOT** and **RESET** buttons.
 
 Below is a clear step‑by‑step guide.
@@ -148,3 +148,4 @@ python -m esptool --chip esp32c6 --port COM5 --baud 115200 --no-stub \
 7. **[Press RESET when flashing is done](guide://action?prefill=Tell%20me%20more%20about%3A%20Press%20RESET%20when%20flashing%20is%20done)** 
 
 Just tell me which direction you want to take.
+
