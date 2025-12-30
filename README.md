@@ -4,26 +4,28 @@ Renerage Stick
 An arcade, retro style, wireless bluetooth joystick.
 
 This repository includes all the necessary code, bill of materials, instructions and link to 3D printable files so you can build yourself a Renegade Stick.
+The 3D printable files can be found on [printables.com](https://www.printables.com/model/1532850-renegade-stick/edit)
 
-Who is it for ?
----------------
+Who is this project it for ?
+----------------------------
 Retro game enthusiasts, gamers, makers, tinkerers
 
 Where can I use it ?
 -------------------
-Wherever there is bluetooth HID support.
+Wherever there is bluetooth HID support. 
 Retro emulators such as Retro Pi, Recalbox etc, Mobile Phones, PCs, steam box, modern Game Consoles like playstastion etc
 
 Where can I get it ?
 --------------------
-This is not sold as a whole, you have to 3D print it, source a few parts and build it yourself.
+This is not sold as a whole, you have to 3D print the parts, source a few electronic and fastener materials  and build it yourself.
 
 What do I need to build it ?
 ----------------------------
 1. Own or have access to a 3D printer
 2. Source or purchase some of the required parts like an ESP32 board, a Li-Po battery, microswitches, hook-up wires, screws etc
 3. Basic soldering (for hooking up wires)
-4. Love building things, patience
+4. A PC from where you can flash or compile the code for the board
+5. Love building things, patience
 Read on for instructions
 
 The Story behind Renagade Stick
@@ -65,7 +67,7 @@ Again, Link 1 was my source but not sure if grobotronics are able to ship worldw
 | ------------------------------------- | -------- | ------- | ------ | ------ | ------ |
 | M3x3.0 or M3x4.0 Heat set inserts Short Version | 21 | You need the sort version which is either 3mm or 4mm long | [CNC kitchen](https://cnckitchen.store/products/heat-set-insert-m3-x-3-short-version-100-pieces) | [grobotronics](https://grobotronics.com/ruthex-threaded-insert-m3-short-pack-of-70.html) | [Ruthex](https://www.ruthex.de/en/collections/gewindeeinsatze/products/ruthex-gewindeeinsatz-m3s-100stuck-rx-m3x4-0-short-messing-gewindebuchsen-fur-3d-druck) |
 | Screw M3x8mm DIN965 (Countersunk)	| 10 | Prefer Black one if you print a Black bottom. Alternatively you could use equivallent countersunk scews with a torx or allen head | [grobotronics](https://grobotronics.com/ruthex-threaded-insert-m3-short-pack-of-70.html) | [amazon.de](https://www.amazon.de/-/en/AERZETIX-countersunk-stainless-standard-screwdriver/dp/B0BH4FK22Y/ref=sr_1_35?crid=3V01PV2M2VP78&dib=eyJ2IjoiMSJ9.CsZBng3_E2T11dcul8av-1z-pBEpZvajPqZNLiajdHIcTeiVLxAlhqlXyRDqV7XeaoKlOXAPr8HXPhnWQeDrpw2CWqgTDdg36shAzVNwMMZ8bLY7esZFmZ6_KuVPvdeK6C24c9boKW3FKbc3bmLjSr1_r_pfmmWz6LdhBBv0tZb5esUfHN_eWZ3hAtJbSILwYPIWF3B68KeeuJie3RDkBlaqtdapz1_BBdMxPxPEQxa0rijzjqTTC1uE3b2bCM3eb61UNxxPhoRw1jlUce_QmdbZ2_h2JYKh-DvfzCIqeZs.Be98D4p2OqLddvGO_XOS8bSF6iUg7NUAdO8F44GlGxo&dib_tag=se&keywords=DIN%2B965%2BM3x8%2Bcountersunk%2Bblack&qid=1765727788&sprefix=din%2B965%2Bm3x8%2Bcountersunk%2Bblack%2Caps%2C166&sr=8-35&th=1) | [TME](https://www.tme.eu/gr/en/katalog/bolts_100316/?params=1484:1493365;1489:1475694,1493340,1496790;139:1475833,1461181,1459809;822:1475693&queryPhrase=m3x8) |
-| Screw M3x8mm DIN912 (Socket Head)	| 12 |  | [grobotronics](https://grobotronics.com/bolt-m3-din-912.html?variation_id=11808) | [TME](https://www.tme.eu/gr/en/katalog/bolts_100316/?params=2394:1475854;139:1459809,1475833;1492:1475469&queryPhrase=m3x8) | [amazon.de](https://www.tme.eu/gr/en/katalog/bolts_100316/?params=2394:1475854;139:1459809,1475833;1492:1475469&queryPhrase=m3x8) |
+| Screw M3x8mm DIN912 (Socket Head)	| 11 |  | [grobotronics](https://grobotronics.com/bolt-m3-din-912.html?variation_id=11808) | [TME](https://www.tme.eu/gr/en/katalog/bolts_100316/?params=2394:1475854;139:1459809,1475833;1492:1475469&queryPhrase=m3x8) | [amazon.de](https://www.tme.eu/gr/en/katalog/bolts_100316/?params=2394:1475854;139:1459809,1475833;1492:1475469&queryPhrase=m3x8) |
 | Microswitch Mini SPDT ON-(ON) - without Lever	| 8 | searc for no lever version | [grobotronics](https://grobotronics.com/microswitch-mini-spdt-on-on-without-lever.html) | [TME](https://www.tme.eu/gr/en/katalog/?params=725:1453016_switches-features:without-lever&queryPhrase=Microswitch%20Mini%20SPDT) | [amazon.de](https://www.amazon.de/-/en/mxuteuk-KW11-3Z01-Micro-Switch-Button/dp/B07S8VWG9J/ref=sr_1_28?crid=2PYUXZZY9JA8L&dib=eyJ2IjoiMSJ9.Wo5obEsIy8Wm8OpsWaLVVvw7qNLwm43B3QI0Z-DiWPagiHiY6xL37mgll1dof3LGiKqKFcid589IeUYXg0uKgYsrwkkBsnS7Y5yNY5_dehRr2JSwcE5fsEPG7GRNvQuLJJx_uu_sV0aoQFhzPnIEptIsUkod78DMFL_pA_WMABBIEYPrQrCKg2da4_HBI_HtC8Nuh17MHUL9nsteGRpmTB7zZ9Ddtl_TIaJS7JilZvXfCNaxMaUmMIDoa9wDHWxe7-5Tt7ePFKNOabmT_LB61nXzwPutdnRiNmsTVE7oP_I.ob0yYQzTmjzyg9NcaTkVDdUWldLL9ycludrOaNSIUA4&dib_tag=se&keywords=Microswitch%2BMini%2BSPDT%2Bno%2Blever&qid=1765729863&sprefix=microswitch%2Bmini%2Bspdt%2Bno%2Blever%2Caps%2C113&sr=8-28&th=1) |
 | Suction cup with M6 screw	| 4 | Optional if you want a firm anchoring on table | [temu](https://share.temu.com/IOST35h5UgB) | [amazon.de](https://www.amazon.de/-/en/Diameter-Lightweight-Installation-Multipurpose-Resistant/dp/B0DM26HL43/ref=sr_1_4?crid=2QMFJOW9607D2&dib=eyJ2IjoiMSJ9.B51RalKxbBXrApQ-0jUfBjznELpu1fs-eZ8Sms4EcMQKK--gy88UR5FTBh_VA60ux_7xHx5P_wXhgEi7WXOb0vhgvRP1spjlF7GU-CxbIEOiVtce6yt07ir_riXX1qzIfzqaPKrMNh5UeAC1h2T5E0l6FTa2PcWtqlVv3AWsznKSpwp70LpWCqvpvIqkwBqXywHnMHTcxTYu2rbf86e-iTQO2pLsDdAeH0XxDkI959LRYquPtkSt4rv0XZsd8c1RL0edBTgq3FYhIEc_mCicrT9tdZLzBXGovPsncA37Qkg.UymWOad3FRg0tXh6oNPaclX1QHIs89h_OGBDtnRbelo&dib_tag=se&keywords=Suction+cup+with+M6+screw&qid=1765729975&sprefix=suction+cup+with+m6+screw%2Caps%2C116&sr=8-4) |
 | Nut M6 DIN934	| 4 | Optional if you choose the suction cups above |  | [amazon.de](https://www.amazon.de/-/en/DIN-934-Hexagonal-Nut-Galvanised/dp/B07FF3869P/ref=sr_1_1?crid=1AJB21N4DRO8K&dib=eyJ2IjoiMSJ9.82DYkS3YrdsUj8QR_bibcSKfFCT82N7SmnAxej0mKGFIqCMLuSsvC_cTJWJbPXQyYa0yEKut6hWMewGvPu61uhALdKyvC4BVoQZ1PAeWUaBG6yyPjhg8dsbf6vmSArjxsFlKtxw3Skhp5xJfOncCe6fwoC9WQ_1JVF7h8XD2NkX2AjwnlLXDXITFTHk6m1OoKmSRddWy9lwurqDJygEgoOTgcif0cTXhZYnZF7937iToWQ8E-1IgKhLyeqrNfjOoxFq6HNDrymf0CapnHzQsM7i1s2lt58nps0xuhIW1q2U.dOLhrQAbFQTSoZNQHQJv50R0EwFcGprAOf75gMu53Ks&dib_tag=se&keywords=DIN934%2BM6&qid=1765730707&sprefix=din934%2Bm6%2Caps%2C106&sr=8-1&th=1) | [TME](https://www.tme.eu/gr/en/katalog/?queryPhrase=DIN934%20M6) |
