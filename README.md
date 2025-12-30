@@ -50,17 +50,18 @@ Read on for instructions
 Specifications
 --------------
 
-Dual axis axis joystick
-8 buttons
-Bluetooth HID gamepad device
-Rechargeable Battery
-Auto Power-off (5 minutes inactivity)
-Switchable mode (HAT - Axis)
-Pairing/Mode indication (Green LED)
-Battery Charging (Red LED)
+Dual axis axis joystick  
+8 buttons  
+Bluetooth HID gamepad device  
+Rechargeable Battery  
+Auto Power-off (5 minutes inactivity)  
+Switchable mode (DPAD - Axis)  
+Pairing/Mode indication (Green LED)  
+Battery Charging (Red LED)  
 Active battery state reporing for on FireBeetle2 ESP32-C6 Board only
+Serial Number reporting (so more than one device can get paired on one host)
 
-
+<br>
 
 The Story behind Renagade Stick
 -------------------------------
@@ -123,39 +124,49 @@ ESP32-C6 (DFR1075) is the only one that supports active battery level monitoring
 
 <br>
 
-# Build Instructions
-You can find build instructions with photos at the following file <a href="/docs/assembly/Renegade Stick Assembly Guide.pdf" target="_blank">User Manual (PDF)</a>
+# Assembly Instructions
+You can find Assembly instructions with photos here --> <a href="/docs/assembly/Renegade Stick Assembly Guide.pdf" target="_blank">User Manual (PDF)</a>
 
 <br>
 
 # Operating Instructions
-Short instructions on how to operate your Renegade stick
 
 Charging the Renegade Stick
 -----------------------------
 To charge the Renegade stick, connect a USB type C cable. A Red LED light next to the USB port will light up showing battery is charging. The Red light will go off when battery is fully charged, you may disconnect the USB type C cable.
 
+<br>
+
 Turn the device ON
 ------------------
-A Green light next to the USB connector indicates the device is powered on/active. If the Green LED is OFF, this means the device is powered off/entered deep sleep.
+A **green LED** next to the USB connector indicates the current power state of the Renegade Stick:
+* **Green LED ON**: the device is powered on and active
+* **Green LED OFF**: the device is powered off or in deep-sleep mode
+ 
+To wake the device from deep sleep, press and hold **both front buttons** (the eyes of the ghost) for **at least 3 seconds**.  
+The green LED will begin to flash, indicating that the device has powered on.   
+To preserve battery life, the Renegade Stick will automatically enter deep sleep in the following cases:  
+* If the device is paired but no button presses or joystick movement are detected for more than **5 minutes**  
+* If the device is not paired, or pairing does not occur within **5 minutes**  
 
-To wake device from deep sleep wimply press and hold the two front buttons (eyes of the ghost) for at least 3 seconds. The Green light on the USB port should start flashing which means the device has powered on.
-
-If device is paired but no buttons/movement is recorded for more than 5 minutes, the device will power off/enter deep sleep.
-If device is not paired or does not get paired within 5 minutes, is will power off/enter deep sleep.
+<br>
 
 Pairing the Renegade Stick
 --------------------------
-The device will blink a Green LED at a slow rate (1sec) when it is ready to be paired or is currently not paired with a host.
-On your host open the wireless bluetooth device settings and do a scan to discover the nearby devices. You should be able to find the Renegade Stick in the list. Simply click on it and it should instantly get paired with your host.
-Mind you every host has a different pairing mechanism but you should not require more than selecting the device from the list and selecting to pair with it.
-Once paired the Green LED of Renegade stick will start flashing quickly. Whenever the Green LED flashes quickly means an active paired connection to a host.
-If the device is paired with a host it will not broadcast its presence anymore to other devices so if you would like to pair it with another host you will have to unpair it first from the active host to get it discoverable again. If the device was paired but the host is out of reach or turned off the Renegade stick will be in pairing mode waiting to get claimed.
+When the Renegade Stick is ready to be paired—or is not currently paired with a host—**the green LED will blink slowly** (about once per second).  
+On your host device, open the **Bluetooth settings** and scan for nearby devices.
+You should see **“Renegade Stick”** appear in the list. Select it to initiate pairing.  
+Pairing behavior may vary slightly depending on your operating system or host device, but in most cases selecting the device from the list is all that is required.  
+Once pairing is successful, the green LED will begin to **flash rapidly**, indicating an active connection to a host.
+While paired, the Renegade Stick will stop advertising itself to other devices. If you wish to pair it with a different host, you must first unpair it from the currently connected device.
+If the Renegade Stick was previously paired but the host is turned off or out of range, it will automatically return to pairing mode and wait to be claimed by a host.
+
+<br>
 
 Button Mapping
 --------------
-Once the device is paired it is a good idea to do some button mapping should your game, console or device allows you to.
-By default the handle will be discovered as a HAT switch and the buttons are numbered from left to right 1 to 3 and then from the right side to the left 4 to 6 like below
+If your game or console allows, it would be a good idea to do some button mapping.
+By default the handle will be discovered as a dual axis Joystick and the buttons are numbered from left to right 1 to 3 and then from the right side to the left 4 to 6 like below
 
                             /\                      
       BUTT 1                \/                BUTT 4
@@ -165,6 +176,8 @@ By default the handle will be discovered as a HAT switch and the buttons are num
                       SELECT  START                                
 
 The two front buttons from left to right are SELECT and START
+
+<br>
 
 On some consoles the default mapping is the following but it may differ on your console.
 | Regegade Stick Buttons | PC | Android | PS Mode 1 | PS Mode 2 |
@@ -176,21 +189,38 @@ On some consoles the default mapping is the following but it may differ on your 
 | BUTT 5 | 5 | Y | L1 shoulder | triagle button |
 | BUTT 6 | 6 | Z | R1 shoulder | R1 shoulder |
 
+<br>
+
+Mode of Operation
+-----------------
+The device has two modes of operation DPAD mode and dual Axis mode. Dual axis mode is ment to be used by analogue controllers but some games depend on axis control. Other games are easier to be played on DPAD mode.
+You can instantly switch between modes by pressing all 6 buttons on top at the same time for at least 2 seconds. The device needs to be paired. You will notice the **Green LED** blinking at a different rate.
+You can verify this using gamepad testers like below.
+Everytime the device switches off it will not keep the this setting and when woken up by default will enter axis mode.
+
+<br>
+
+Testing the Device
+------------------
+On a PC/MAC you can test your device online directly on [hardwaretester.com](https://hardwaretester.com/gamepad)
+On an Android Device you can download the following app [Gamepad Tester](https://play.google.com/store/apps/details?id=com.chimera.saturday.evogamepadtester)
+
+<br>
 
 LED indicators
 --------------
 
 | USB LED Color | State | Meaning |
 | ------------- | ----- | ------- |
-| Green | Flashing slow | Not paired |
-| Green | Flashing quick | Paired |
+| Green | Flashing slow (1s)| Device Not paired |
+| Green | Flashing very quick | Device Paired (axis mode) |
+| Green | Flashing quick | Device Paired (DPAD mode) |
 | Green | OFF | Gamepad is in sleep mode/battery discharged |
 | Red | permanently ON | Battery charging |
 | Red | OFF | Batterry charged/ Battery Full |
 | Red | Flashing | No battery detected | 
 
-
-
+<br>
 
 # Liked it ?
 If you found some of this information usuful and would like to buy me a coffee you can donate below
