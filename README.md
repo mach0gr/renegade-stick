@@ -10,7 +10,7 @@ The 3D printable files can be found on [printables.com](https://www.printables.c
 
 <br>
 
-License
+Disclaimer
 -------
 All 3D printed hardware part files Licensed under [Open Community License (OCL)](https://github.com/OpenCommunityLicence/OpenCommunityLicence) and are available on [printables.com](https://www.printables.com/model/1532850-renegade-stick)<br>
 Software code hereby is Licensed under the [GPL-3.0 License](LICENSE)<br>
@@ -54,6 +54,12 @@ Dual axis axis joystick
 8 buttons
 Bluetooth HID gamepad device
 Rechargeable Battery
+Auto Power-off (5 minutes inactivity)
+Switchable mode (HAT - Axis)
+Pairing/Mode indication (Green LED)
+Battery Charging (Red LED)
+Active battery state reporing for on FireBeetle2 ESP32-C6 Board only
+
 
 
 The Story behind Renagade Stick
