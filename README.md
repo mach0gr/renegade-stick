@@ -89,8 +89,7 @@ If you would like to compile on your own, there is a single sketch. If you wish 
 ESP32-C6 (DFR1075) is the only one that supports active battery level monitoring. The other two will only report a dummy 100% battery. However ESP32-C6 is the trickiest to flash although I hear this is fixed in late board or chip revisions. In any case I provide clear instructions how to flash each of them.
 
 # Build Instructions
-
-
+You can find build instructions with photos at the following file [Renegade Stick Assembly Guide](/assembly/Renegade Stick Assembly Guide.pdf)
 
 
 # Operating Instructions
