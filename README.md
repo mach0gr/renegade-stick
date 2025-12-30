@@ -242,6 +242,11 @@ LED indicators
 
 <br>
 
+# Flashing the Renegade Stick
+
+
+<br>
+
 # Liked it ?
 If you found some of this information useful and would like to buy me a coffee you can donate below
 
