@@ -81,6 +81,7 @@ Pairing/Mode indication (Green LED)
 Battery Charging (Red LED)  
 Active battery state reporting (FireBeetle2 ESP32-C6 board only)
 Serial Number reporting (so more than one device can get paired on one host)
+Ambidextrous design - Use the side you prefer 
 
 <br>
 
