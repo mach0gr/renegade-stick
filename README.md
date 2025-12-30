@@ -67,9 +67,9 @@ Bill of Materials
 -----------------
 I'm not getting any commision nor am I related with any of the below link sources. 
 For my build I have sourced most of my parts from a local electronics store [grobotronics.com](https://grobotronics.com/) with some exceptions. Most of my build was from (Link 1)
-I tried to find these items and provide you links for other platforms like amazon,temu etc sothem (Link 2 and 3). However I have not tried them. Sorry I couldn't find everything in one place. 
-The links are indicative, feel free to source these materials from your own prefered stores. Pay attention however to quantities and exact specifications. 
-Again, Link 1 was my source.
+I tried to find these items and provide you links for other platforms like amazon,temu etc (Link 2 and 3) however, I have not tried these links out so double-check or do your own research.
+The links are only indicative, feel free to source these materials from your own prefered stores. Pay attention to quantities and exact specifications. 
+
 
 | Item                                  | Quantity | Comment | Photo | Link 1 | Link 2 | Link 3 |
 | ------------------------------------- | -------- | ------- | ----- | ------ | ------ | ------ |
