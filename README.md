@@ -8,6 +8,8 @@ An arcade, retro style, wireless bluetooth joystick.
 This repository includes all the necessary code, bill of materials, instructions and link to 3D printable files so you can build yourself a Renegade Stick.
 The 3D printable files can be found on [printables.com](https://www.printables.com/model/1532850-renegade-stick/edit)
 
+<br>
+
 Who is this project it for ?
 ----------------------------
 Retro game enthusiasts, gamers, makers, tinkerers
@@ -29,6 +31,8 @@ What do I need to build it ?
 4. A PC from where you can flash or compile the code for the board
 5. Love building things, patience
 Read on for instructions
+
+<br>
 
 The Story behind Renagade Stick
 -------------------------------
@@ -57,6 +61,7 @@ I created this joystick as a gift for Nikos, for all these reasons. I’m sure i
 
 And since I had already gone this far, I thought: why not make it available to anyone who might want to build one themselves?
 
+<br>
 
 Bill of Materials
 -----------------
@@ -88,12 +93,15 @@ Regarding the DFRobot ESP boards, I have successfully tested all 3 different DFR
 If you would like to compile on your own, there is a single sketch. If you wish to flash directly with the .bin file you'll need to pick the correct binary for your board. 
 ESP32-C6 (DFR1075) is the only one that supports active battery level monitoring. The other two will only report a dummy 100% battery. However ESP32-C6 is the trickiest to flash although I hear this is fixed in late board or chip revisions. In any case I provide clear instructions how to flash each of them.
 
+<br>
+
 # Build Instructions
 You can find build instructions with photos at the following file <a href="/docs/assembly/Renegade Stick Assembly Guide.pdf" target="_blank">User Manual (PDF)</a>
 
+<br>
 
 # Operating Instructions
-Below some short instructions on how to operate your Renegade stick
+Short instructions on how to operate your Renegade stick
 
 Charging the Renegade Stick
 -----------------------------
