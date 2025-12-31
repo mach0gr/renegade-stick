@@ -6,7 +6,7 @@ A DIY arcade-style, retro, wireless Bluetooth joystick.
 ![Renegade Stick](/photos/renegade-stick.jpg)
 
 This repository includes all the necessary code, bill of materials, instructions, and links to 3D printable files so you can build yourself a Renegade Stick.
-The 3D printable files can be found on [printables.com](https://www.printables.com/model/1532850-renegade-stick/edit)
+The 3D printable files can be found on [printables.com](https://www.printables.com/model/1532850-renegade-stick)
 
 <br>
 
