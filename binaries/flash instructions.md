@@ -4,9 +4,9 @@ This document describes how to flash the Renegade Stick firmware onto supported 
 
 ## Supported Boards
 
-* **FireBeetle 2 ESP32-E (N16R2)** – DFR1139
-* **FireBeetle 2 ESP32-S3 (N4)** – DFR1145
-* **FireBeetle 2 ESP32-C6** – DFR1075 (⚠️ v0.1 chip revision notes apply)
+* **[FireBeetle 2 ESP32-E (N16R2) – DFR1139](https://wiki.dfrobot.com/_SKU_DFR1139_FireBeetle_2_ESP32_E_N16R2_IoT_Microcontroller)**
+* **[FireBeetle 2 ESP32-S3 (N4) – DFR1145](https://wiki.dfrobot.com/_SKU_DFR1145_FireBeetle_2_ESP32_S3_N4_IoT_development_board)**
+* **[FireBeetle 2 ESP32-C6 – DFR1075](https://wiki.dfrobot.com/SKU_DFR1075_FireBeetle_2_Board_ESP32_C6)** (⚠️ v0.1 chip revision notes apply)
 
 ---
 
