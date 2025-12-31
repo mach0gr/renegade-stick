@@ -245,6 +245,18 @@ LED indicators
 
 # Flashing the Renegade Stick
 
+## Prerequisites
+
+* USB-C cable
+* Windows, macOS, or Linux PC
+* One of the following:
+
+  * Arduino IDE
+  * Python + `esptool`
+  * Espressif Flash Download Tool (not supported on all of the boards)
+
+Please follow the flush instructions here --> [flash instructions](/binaries/flash%20instructions.md)
+
 
 <br>
 
