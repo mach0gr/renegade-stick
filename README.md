@@ -36,10 +36,11 @@ Please be careful, especially with Li-Po batteries—they can be dangerous if mi
   - [Charging the Renegade Stick](#charging-the-renegade-stick)
   - [Turn the Device On](#turn-the-device-on)
   - [Pairing the Renegade Stick](#pairing-the-renegade-stick)
-- [Button Mapping](#button-mapping)
-- [Mode of Operation](#mode-of-operation)
+  - [Button Mapping](#button-mapping)
+  - [Mode of Operation](#mode-of-operation)
 - [Testing the Device](#testing-the-device)
 - [LED Indicators](#led-indicators)
+- [Flashing the Renegade Stick](#flashing-the-renegade-stick)
 - [Liked It?](#liked-it)
 
 <br>
