@@ -38,8 +38,8 @@ Please be careful, especially with Li-Po batteries—they can be dangerous if mi
   - [Pairing the Renegade Stick](#pairing-the-renegade-stick)
   - [Button Mapping](#button-mapping)
   - [Mode of Operation](#mode-of-operation)
+  - [LED Indicators](#led-indicators)
 - [Testing the Device](#testing-the-device)
-- [LED Indicators](#led-indicators)
 - [Flashing the Renegade Stick](#flashing-the-renegade-stick)
 - [Liked It?](#liked-it)
 
@@ -222,13 +222,6 @@ Every time the device switches off it will not retain this setting and when woke
 
 <br>
 
-Testing the Device
-------------------
-On a **PC/MAC** you can test your device online directly on [hardwaretester.com](https://hardwaretester.com/gamepad)  
-On an **Android** Device you can download the following app [Gamepad Tester](https://play.google.com/store/apps/details?id=com.chimera.saturday.evogamepadtester)
-
-<br>
-
 LED indicators
 --------------
 
@@ -241,6 +234,13 @@ LED indicators
 | Red | permanently ON | Battery charging |
 | Red | OFF | Battery charged/ Battery Full |
 | Red | Flashing | No battery detected | 
+
+<br>
+
+# Testing the Device
+
+On a **PC/MAC** you can test your device online directly on [hardwaretester.com](https://hardwaretester.com/gamepad)  
+On an **Android** Device you can download the following app [Gamepad Tester](https://play.google.com/store/apps/details?id=com.chimera.saturday.evogamepadtester)
 
 <br>
 
