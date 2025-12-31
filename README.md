@@ -36,10 +36,11 @@ Please be careful, especially with Li-Po batteries—they can be dangerous if mi
   - [Charging the Renegade Stick](#charging-the-renegade-stick)
   - [Turn the Device On](#turn-the-device-on)
   - [Pairing the Renegade Stick](#pairing-the-renegade-stick)
-- [Button Mapping](#button-mapping)
-- [Mode of Operation](#mode-of-operation)
+  - [Button Mapping](#button-mapping)
+  - [Mode of Operation](#mode-of-operation)
+  - [LED Indicators](#led-indicators)
 - [Testing the Device](#testing-the-device)
-- [LED Indicators](#led-indicators)
+- [Flashing the Renegade Stick](#flashing-the-renegade-stick)
 - [Liked It?](#liked-it)
 
 <br>
@@ -221,13 +222,6 @@ Every time the device switches off it will not retain this setting and when woke
 
 <br>
 
-Testing the Device
-------------------
-On a **PC/MAC** you can test your device online directly on [hardwaretester.com](https://hardwaretester.com/gamepad)  
-On an **Android** Device you can download the following app [Gamepad Tester](https://play.google.com/store/apps/details?id=com.chimera.saturday.evogamepadtester)
-
-<br>
-
 LED indicators
 --------------
 
@@ -243,7 +237,26 @@ LED indicators
 
 <br>
 
+# Testing the Device
+
+On a **PC/MAC** you can test your device online directly on [hardwaretester.com](https://hardwaretester.com/gamepad)  
+On an **Android** Device you can download the following app [Gamepad Tester](https://play.google.com/store/apps/details?id=com.chimera.saturday.evogamepadtester)
+
+<br>
+
 # Flashing the Renegade Stick
+
+## Prerequisites
+
+* USB-C cable
+* Windows, macOS, or Linux PC
+* One of the following:
+
+  * Arduino IDE
+  * Python + `esptool`
+  * Espressif Flash Download Tool (not supported on all of the boards)
+
+Please follow the flush instructions here --> [flash instructions](/binaries/flash%20instructions.md)
 
 
 <br>
