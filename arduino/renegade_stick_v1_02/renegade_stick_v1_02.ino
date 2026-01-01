@@ -9,6 +9,7 @@
 
 // Changelog
 // v1_0 Github initial Release version
+// v1_02 Cleaned DPAD processing code. Now Sending a one off update for centering axes as it connets. Raised debounce by 10msec for some false bouncing
 
 #include <Arduino.h>
 #include <BleGamepad.h> // using library from https://github.com/lemmingDev/ESP32-BLE-Gamepad/tree/master
@@ -57,13 +58,14 @@ bool ledState = LOW;                   // Keep last LED led State
 
 // ---------------------------------------------------------------
 // Deep Sleep config
+bool bleWasConnected = false;   // used to sent an initial state once connected.
 constexpr unsigned long Sleep_Inactivity_INTERVAL = 300000;   // Sleep time interval (If inactive for x milliseconds, it will enter sleep mode) 300000 milliseconds = 5 minutes
 unsigned long lastSleepTime = 0;                          // Variable to be used as a global counter for sleep timer
 
 // ---------------------------------------------------------------
 // Button configuration
 constexpr uint8_t NUM_BUTTONS = 8;
-constexpr unsigned long DEBOUNCE_DELAY = 10;   // debounce in milliseconds
+constexpr unsigned long DEBOUNCE_DELAY = 20;   // debounce in milliseconds
 
 //The order of these three arrays matters a lot, be carefully when changing them
 int buttonPins[NUM_BUTTONS] = {BUTTON_1, BUTTON_2, BUTTON_3, BUTTON_4, BUTTON_5, BUTTON_6, START_BUTTON, SELECT_BUTTON};
@@ -91,6 +93,16 @@ enum StickMode {
   STICK_MODE_AXIS
 };
 StickMode stickMode = STICK_MODE_AXIS;   // default mode is Axis
+
+// Dpad stick state handling
+struct StickState {
+  uint8_t hat;       // 0–8
+  int16_t x;
+  int16_t y;
+};
+
+StickState currentStick = {0, AXIS_CENTER, AXIS_CENTER};
+StickState lastStick    = {0, AXIS_CENTER, AXIS_CENTER};
        
 unsigned long comboPressTime = 0;   // for edge detection
 const unsigned long COMBO_HOLD_TIME = 300; // ms (optional safety)
@@ -151,7 +163,7 @@ void setup() {    // setup code here, runs once:
   bleGamepadConfig.setHatSwitchCount(1);
   bleGamepadConfig.setTXPowerLevel(3);  // Defaults to 9 if not set. The only valid values are: -12, -9, -6, -3, 0, 3, 6 and 9 (Values correlate to dbm)
   bleGamepadConfig.setModelNumber("1.0");
-  bleGamepadConfig.setSoftwareRevision("Software Rev 1");
+  bleGamepadConfig.setSoftwareRevision("Software Rev v1.02");
   bleGamepadConfig.setSerialNumber(serialNumber);
   bleGamepadConfig.setFirmwareRevision("2.0");
   bleGamepadConfig.setHardwareRevision("1.7");
@@ -176,7 +188,7 @@ void setup() {    // setup code here, runs once:
 #endif
 
 // Function to compute hat value based on DPAD pins
-uint8_t readDpad() {
+StickState readDpadState() {
   bool up    = !digitalRead(DPAD_UP);
   bool down  = !digitalRead(DPAD_DOWN);
   bool left  = !digitalRead(DPAD_L);
@@ -193,70 +205,23 @@ uint8_t readDpad() {
   // 6 = down-left
   // 7 = left
   // 8 = up-left
-  if(up && right) return 2;
-  if(up && left) return 8;
-  if(down && right) return 4;
-  if(down && left) return 6;
-  if(up) return 1;
-  if(right) return 3;
-  if(down) return 5;
-  if(left) return 7;
-  return 0; // center
+  StickState s;
+  s.hat = 0;
+  s.x = AXIS_CENTER;
+  s.y = AXIS_CENTER;
+
+  if (up && right)      { s.hat = 2; s.x = AXIS_MAX;   s.y = AXIS_MIN; }
+  else if (up && left)  { s.hat = 8; s.x = AXIS_MIN;   s.y = AXIS_MIN; }
+  else if (down && right){ s.hat = 4; s.x = AXIS_MAX; s.y = AXIS_MAX; }
+  else if (down && left){ s.hat = 6; s.x = AXIS_MIN;  s.y = AXIS_MAX; }
+  else if (up)          { s.hat = 1; s.y = AXIS_MIN; }
+  else if (right)       { s.hat = 3; s.x = AXIS_MAX; }
+  else if (down)        { s.hat = 5; s.y = AXIS_MAX; }
+  else if (left)        { s.hat = 7; s.x = AXIS_MIN; }
+
+  return s;
 }
 
-//Function to convert hat value to int for use with X axes
-int16_t hat_to_xcord(uint8_t hat_value) {
-  switch (hat_value) {
-    case 2:
-      return AXIS_MAX;
-      break;
-    case 8:
-      return AXIS_MIN;
-      break;
-    case 4:
-      return AXIS_MAX;
-      break;
-    case 6:
-      return AXIS_MIN;
-      break;
-    case 3:
-      return AXIS_MAX;
-      break;
-    case 7:
-      return AXIS_MIN;
-      break;
-    default:
-      return AXIS_CENTER; // centered value
-      break;
-  } 
-}
-
-//Function to convert hat value to int for use with Y axes
-int16_t hat_to_ycord(uint8_t hat_value) {
-  switch (hat_value) {
-    case 2:
-      return AXIS_MIN;
-      break;
-    case 8:
-      return AXIS_MIN;
-      break;
-    case 4:
-      return AXIS_MAX;
-      break;
-    case 6:
-      return AXIS_MAX;
-      break;
-    case 1:
-      return AXIS_MIN;
-      break;
-    case 5:
-      return AXIS_MAX;
-      break;
-    default:
-      return AXIS_CENTER; // centered value
-      break;
-  } 
-}
 
 // Function to call to go to sleep
 void go_deep_sleep() {
@@ -326,6 +291,13 @@ void loop() {
       BLINK_INTERVAL = 50;
     }
     
+    if (!bleWasConnected) {   // Send initial neutral state only once
+      bleGamepad.setHat1(0);  // centered / released
+      bleGamepad.setLeftThumb(AXIS_CENTER, AXIS_CENTER);
+      bleGamepad.sendReport();
+      bleWasConnected = true;   //set flag so we don't run this again
+    }
+
     bool stateChanged = false;
 
     for (int i=0; i<NUM_BUTTONS; i++){
@@ -374,24 +346,17 @@ void loop() {
       }
     }
 
-    if(dpadChanged){
-      uint8_t hat = readDpad();
-      int16_t x_cord = hat_to_xcord(hat);
-      int16_t y_cord = hat_to_ycord(hat);
-      static uint8_t lastHat = 0;
-      if(hat != lastHat){
+    if (dpadChanged) {
+      currentStick = readDpadState();
+      if (currentStick.hat != lastStick.hat) {
         if (stickMode == STICK_MODE_HAT) {
-          bleGamepad.setHat1(hat);
-          bleGamepad.setLeftThumb(16383, 16383);   // neutral axis
+          bleGamepad.setHat1(currentStick.hat);
         } else {
-          bleGamepad.setHat1(0); // HAT centered
-          bleGamepad.setLeftThumb(x_cord, y_cord);
+          bleGamepad.setLeftThumb(currentStick.x, currentStick.y);
         }
-        //bleGamepad.setHat1(hat);
-        //bleGamepad.setLeftThumb(x_cord, y_cord);  // or bleGamepad.setX(32767); and bleGamepad.setY(32767);
-        lastHat = hat;
-        stateChanged = true;
-        DEBUG_PRINTF("Hat Button changed to : %d \n", hat);
+      lastStick = currentStick;
+      stateChanged = true;
+      DEBUG_PRINTF("DPAD -> hat:%d x:%d y:%d\n", currentStick.hat, currentStick.x, currentStick.y);
       }
     }
 

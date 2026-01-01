@@ -22,13 +22,13 @@
 
 
 // ---------------------- Flashing Guide ----------------------
-// Flashing ESP32‑C6 v0.1 chips wasn’t as straightforward as expected.
+// Flashing ESP32-C6 v0.1 chips wasn’t as straightforward as expected.
 // I’m not sure if newer chip revisions or software updates fix this, but on the two v0.1 boards I tested, entering programming mode must be done manually using the BOOT and RESET buttons.
 // See below for instructions on how to enter programming mode.
 
 
-// ---- Entering Manual Programming Mode (ESP32‑C6 DFR1075) ----
-// On ESP32‑C6 v0.1 chips, the automatic USB reset doesn’t work correctly, so the chip fails to enter or exit boot mode on its own.
+// ---- Entering Manual Programming Mode (ESP32-C6 DFR1075) ----
+// On ESP32-C6 v0.1 chips, the automatic USB reset doesn’t work correctly, so the chip fails to enter or exit boot mode on its own.
 // No matter which flashing tool you use, you must manually put the board into programming mode first. 
 // Procedure below:
 
@@ -57,18 +57,18 @@
 
 
 // ---------------------- Flash File ----------------------
-// You can either download a precompiled .bin file from the renegade‑stick GitHub repo or compile it yourself using the Arduino environment.
+// You can either download a precompiled .bin file from the renegade stick GitHub repo or compile it yourself using the Arduino environment.
 // Arduino can also flash the board automatically after compiling.
 
 // You’ll need to identify the USB COM port your board appears on.
-// Connect the board with a USB‑C cable.
+// Connect the board with a USB-C cable.
 // On Windows, open Device Manager → “Ports (COM & LPT)”.
 // Look for “USB Serial Device (COM X)”. Note the COM number.
 // If unsure which device is the board, unplug USB and see which entry disappears.
 
 
 // ---- Flashing with flash_download_tool ----
-// Download the correct .bin file from the renegade‑stick GitHub repo.
+// Download the correct .bin file from the renegade stick GitHub repo.
 // Download the official ESP32 flasher here:
 // https://docs.espressif.com/projects/esp-test-tools/en/latest/esp32/production_stage/tools/flash_download_tool.html
 // Unfortunately, I haven’t found a way to flash ESP32‑C6 v0.1 chips with this tool, because this chip revision requires --no-stub mode.
@@ -76,7 +76,7 @@
 
 
 // ---- Flashing with Python esptool ----
-// Download the correct .bin file from the renegade‑stick GitHub repo.
+// Download the correct .bin file from the renegade stick GitHub repo.
 // On Windows, install Python from the Microsoft Store.
 // Then open Command Prompt and install esptool:
 //     pip install esptool
@@ -107,7 +107,7 @@
 // Zigbee Mode: Disabled
 // Programmer: esptool
 
-// *Note: ESP32‑C6 v0.1 chips cannot be flashed with stub mode,
+// *Note: ESP32-C6 v0.1 chips cannot be flashed with stub mode,
 // which Arduino enables by default when installing ESP libraries.
 // To fix this:
 //
