@@ -10,6 +10,7 @@
 // Changelog
 // v1_0 Github initial Release version
 // v1_02 Cleaned DPAD processing code. Now Sending a one off update for centering axes as it connets. Raised debounce by 10msec for some false bouncing
+// v1_03 removed overall pacing delay, brought down debouncing to 5 ms. Set ble power to 9.
 
 #include <Arduino.h>
 #include <BleGamepad.h> // using library from https://github.com/lemmingDev/ESP32-BLE-Gamepad/tree/master
@@ -65,7 +66,7 @@ unsigned long lastSleepTime = 0;                          // Variable to be used
 // ---------------------------------------------------------------
 // Button configuration
 constexpr uint8_t NUM_BUTTONS = 8;
-constexpr unsigned long DEBOUNCE_DELAY = 20;   // debounce in milliseconds
+constexpr unsigned long DEBOUNCE_DELAY = 5;   // debounce in milliseconds
 
 //The order of these three arrays matters a lot, be carefully when changing them
 int buttonPins[NUM_BUTTONS] = {BUTTON_1, BUTTON_2, BUTTON_3, BUTTON_4, BUTTON_5, BUTTON_6, START_BUTTON, SELECT_BUTTON};
@@ -161,9 +162,9 @@ void setup() {    // setup code here, runs once:
   bleGamepadConfig.setVid(0xe502);
   bleGamepadConfig.setPid(PRODUCT_PID);
   bleGamepadConfig.setHatSwitchCount(1);
-  bleGamepadConfig.setTXPowerLevel(3);  // Defaults to 9 if not set. The only valid values are: -12, -9, -6, -3, 0, 3, 6 and 9 (Values correlate to dbm)
+  bleGamepadConfig.setTXPowerLevel(9);  // Defaults to 9 if not set. The only valid values are: -12, -9, -6, -3, 0, 3, 6 and 9 (Values correlate to dbm)
   bleGamepadConfig.setModelNumber("1.0");
-  bleGamepadConfig.setSoftwareRevision("Software Rev v1.02");
+  bleGamepadConfig.setSoftwareRevision("Software Rev v1.03");
   bleGamepadConfig.setSerialNumber(serialNumber);
   bleGamepadConfig.setFirmwareRevision("2.0");
   bleGamepadConfig.setHardwareRevision("1.7");
@@ -402,5 +403,5 @@ void loop() {
   go_deep_sleep();
   }
   
-  delay(1); // Small pacing delay (not part of debounce) [20 is working well but there is small delay when double clicking quickly]
+  //delay(1); // Small pacing delay (not part of debounce)
 }
