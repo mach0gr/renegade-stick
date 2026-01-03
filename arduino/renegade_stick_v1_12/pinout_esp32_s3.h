@@ -11,6 +11,8 @@
 #define BUTTON_4      GPIO_NUM_8		// A3
 #define BUTTON_5      GPIO_NUM_10		// A4
 #define BUTTON_6      GPIO_NUM_11		// A5
+#define BUTTON_7      GPIO_NUM_12		// D12
+#define BUTTON_8      GPIO_NUM_13		// D11
 #define START_BUTTON  GPIO_NUM_9		// D7
 #define SELECT_BUTTON GPIO_NUM_0		// D9    //currently wired to (0/D9) proposed 12/D12
 #define DPAD_L        GPIO_NUM_18		// D6

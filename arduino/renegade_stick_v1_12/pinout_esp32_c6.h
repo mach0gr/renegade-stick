@@ -11,6 +11,8 @@
 #define BUTTON_4      GPIO_NUM_14		// D3
 #define BUTTON_5      GPIO_NUM_16		// TX
 #define BUTTON_6      GPIO_NUM_17		// RX
+#define BUTTON_7      GPIO_NUM_1		// D6
+#define BUTTON_8      GPIO_NUM_18		// D7
 #define START_BUTTON  GPIO_NUM_6		// D12
 #define SELECT_BUTTON GPIO_NUM_7		// D11
 #define DPAD_L        GPIO_NUM_20		// SCL
