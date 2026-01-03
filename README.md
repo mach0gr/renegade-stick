@@ -24,10 +24,10 @@ Please be careful, especially with Li-Po batteries—they can be dangerous if mi
 
 ## Table of Contents
 
-- [Who Is This Project For?](#who-is-this-project-for)
-- [Where Can I Use It?](#where-can-i-use-it)
-- [Where Can I Get It?](#where-can-i-get-it)
-- [What Do I Need to Build It?](#what-do-i-need-to-build-it)
+- [Who Is This Project For?](#who-is-this-project-for-)
+- [Where Can I Use It?](#where-can-i-use-it-)
+- [Where Can I Get It?](#where-can-i-get-it-)
+- [What Do I Need to Build It?](#what-do-i-need-to-build-it-)
 - [Specifications](#specifications)
 - [The Story Behind Renegade Stick](#the-story-behind-renegade-stick)
 - [Bill of Materials](#bill-of-materials)
@@ -37,11 +37,11 @@ Please be careful, especially with Li-Po batteries—they can be dangerous if mi
   - [Turn the Device On](#turn-the-device-on)
   - [Pairing the Renegade Stick](#pairing-the-renegade-stick)
   - [Button Mapping](#button-mapping)
-  - [Mode of Operation / Combo Keys](#mode-of-operation-combo-keys)
+  - [Mode of Operation / Combo Keys](#modes-of-operation--combo-keys)
   - [LED Indicators](#led-indicators)
 - [Testing the Device](#testing-the-device)
 - [Flashing the Renegade Stick](#flashing-the-renegade-stick)
-- [Liked It?](#liked-it)
+- [Liked It?](#liked-it-)
 
 <br>
 
@@ -138,7 +138,7 @@ The links are only indicative, feel free to source these materials from your own
 | FireBeetle2 ESP32-C6 (DFR1075) | 1 | Select only ONE of these 3 board. All have been tested to work. Prefer ESP32-C6 being cheaper, more modern and feature-rich. Make sure you buy one of the exact DFR codes. | ![FireBeetle2 ESP32-C6](/icons/item11.png) | [grobotronics](https://grobotronics.com/firebeetle-2-esp32-c6-wi-fi-6-bluetooth-5-solar-powered.html) | [DFRobot](https://www.dfrobot.com/product-2771.html) |
 | FireBeetle2 ESP32-S3(N4) (DFR1145) | 1 | Select only ONE of these 3 board. All have been tested to work. Prefer ESP32-C6 being cheaper, more modern and feature-rich. Make sure you buy one of the exact DFR codes. | ![FireBeetle2 ESP32-S3](/icons/item12.png) |  [grobotronics](https://grobotronics.com/firebeetle-2-esp32-s3-n4.html) | [DFRobot](https://www.dfrobot.com/product-2836.html) |
 | FireBeetle2 ESP32-E N16R2 (DFR1139) | 1 | Select only ONE of these 3 board. All have been tested to work. Prefer ESP32-C6 being cheaper, more modern and feature-rich. Make sure you buy one of the exact DFR codes. | ![FireBeetle2 ESP32-E](/icons/item13.png) | [grobotronics](https://grobotronics.com/firebeetle-2-esp32-c6-wi-fi-6-bluetooth-5-solar-powered.html) | [DFRobot](https://www.dfrobot.com/product-2837.html) |
-| Quick Disconnect - Female Bare 2.8mm | 16 | OPTIONAL item. Only needed if you don’t wish to solder the microswitch terminals. The 2.8mm version is for microswitches | ![Quick Disconnect - Female Bare 2.8mm](/icons/item14.png) | [grobotronics](https://grobotronics.com/quick-disconnect-female-bare-2.8mm-bag-of-100.html) |
+| Quick Disconnect - Female Bare 2.8mm | 20 | OPTIONAL item. Only needed if you don’t wish to solder the microswitch terminals. The 2.8mm version is for microswitches | ![Quick Disconnect - Female Bare 2.8mm](/icons/item14.png) | [grobotronics](https://grobotronics.com/quick-disconnect-female-bare-2.8mm-bag-of-100.html) |
 | Quick Disconnect - Female Bare 4.8mm | 8 | OPTIONAL item. Only needed if you don’t wish to solder the microswitch terminals. The 4.8mm version is for the joystick assembly | ![Quick Disconnect - Female Bare 4.8mm](/icons/item15.png) | [grobotronics](https://grobotronics.com/quick-disconnect-female-bare-4.8mm-bag-of-100.html) |
 
 Regarding the DFRobot ESP boards, I have successfully tested all 3 different DFRobot boards and have modified the source code so it’s compatible with all three of them.
@@ -219,19 +219,19 @@ On some consoles the default mapping is the following but it may differ on your 
 
 Modes of Operation / Combo Keys
 ------------------------------
-The device has **two modes** of operation DPAD mode and dual Axis mode. Dual axis mode is meant to be used by analog controllers but some games depend on axis control. Other games are easier to be played on DPAD mode.  
-You can instantly switch between modes by pressing "key combo 2". The device needs to be paired. You will notice the **Green LED** blinking at a different rate.  
+The device has **two modes** of operation **DPAD mode** and dual **Axis mode**. Dual axis mode is meant to be used by analog controllers and some games depend on axis control. Other games are easier to be played on DPAD mode.  
+You can instantly switch between modes by pressing a "key combo". The device needs to be paired. You will notice the **Green LED** blinking at a different rate.  
 
-The device can flip the keys over depending if you prefer to move the stick with your Right or Left hand. To flip the keys press "key combo 1".
+The device can flip the keys over depending if you prefer to move the stick with your Right or Left hand. To flip the keys use a "key combo".
 
 Key Combos
-| Mode of Operation | Key combo (press the keys at the same time) |
+| Mode of Operation | Key combo (press the keys at the same time ) |
 | ----------------- | ------------------------------------------- |
 | Switch Hand side | 1,2,5,6 |
 | Switch mode (axis/DPAD) | 3,4,7,8 |
 
 
-You can verify this using gamepad testers like below.  
+You can verify and test using gamepad testers. [Testing the Device](#testing-the-device).  
 Every time the device switches off it will not retain any of these settings and will default to **axis mode** and **right hand operation**
 
 <br>
