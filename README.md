@@ -227,8 +227,8 @@ The device can flip the keys over depending if you prefer to move the stick with
 Key Combos
 | Mode of Operation | Key combo (press the keys at the same time ) |
 | ----------------- | ------------------------------------------- |
-| Switch Hand side | 1,2,5,6 |
-| Switch mode (axis/DPAD) | 3,4,7,8 |
+| Switch Hand side | 1 + 2 + 5 + 6 |
+| Switch mode (axis/DPAD) | 3 + 4 + 7 + 8 |
 
 
 You can verify and test using gamepad testers. [Testing the Device](#testing-the-device).  
