@@ -14,6 +14,7 @@
 // v1_10 some code cleanup. 4 Buttons each side edition. New Combo button press to flip hand held mode from Right hand side to Left hand side(button mapping)
 // v1_11 Code refactor and debounce optimization
 // v1_12 further code refactor on DPADs
+// v1_13 implemented new combo button functions (reboot and deepsleep).
 
 #include <Arduino.h>
 #include <BleGamepad.h> // using library from https://github.com/lemmingDev/ESP32-BLE-Gamepad/tree/master
@@ -63,6 +64,7 @@ bool ledState = LOW;                   // Keep last LED led State
 
 // ---------------------------------------------------------------
 // Deep Sleep config
+RTC_DATA_ATTR bool wokeFromButton = false;    // variable to persist during deep sleep. We set this so during setup() we skip the deep sleep when restarting or fist initial start upon power apply.
 bool bleWasConnected = false;   // variable to be used as state in order to send a BLE report just once on initial connect.
 constexpr unsigned long Sleep_Inactivity_INTERVAL = 300000;   // Sleep time interval (If inactive for x milliseconds, it will enter sleep mode) 300000 milliseconds = 5 minutes
 unsigned long lastSleepTime = 0;                          // Variable to be used as a global counter for sleep timer
@@ -161,13 +163,15 @@ void setup() {    // setup code here, runs once:
   
   // On startup we check if both buttons are pressed at the same time. Board can wake from a single button press, here we make sure both buttons are pressed so we can wake up the board
   delay(200); // debounce for pullups
-  if (digitalRead(START_BUTTON) == LOW && digitalRead(SELECT_BUTTON) == LOW) {
-    DEBUG_PRINTLN("Valid wake: both buttons pressed. Ready for play !");
-  } 
-  else {
-    DEBUG_PRINTLN("Invalid wake: going back to sleep");
-    delay(1000);
-    go_deep_sleep();  // call deep sleep procedure
+  if (wokeFromButton) {   // this variable persists during deep sleep but not during a fresh start/restart. We check here is the device has previously been in deep sleep. If not we bypass this as it is the first initial boot.
+    if (digitalRead(START_BUTTON) == LOW && digitalRead(SELECT_BUTTON) == LOW) {
+      DEBUG_PRINTLN("Valid wake: both buttons pressed. Ready for play !");
+    } 
+    else {
+      DEBUG_PRINTLN("Invalid wake: going back to sleep");
+      delay(1000);
+      go_deep_sleep();  // call deep sleep procedure
+    }
   }
 
   // Setup the analog resolution used for battery measurement to 12 bits (0-4096)
@@ -185,7 +189,7 @@ void setup() {    // setup code here, runs once:
   bleGamepadConfig.setHatSwitchCount(1);
   bleGamepadConfig.setTXPowerLevel(9);  // Defaults to 9 if not set. The only valid values are: -12, -9, -6, -3, 0, 3, 6 and 9 (Values correlate to dbm)
   bleGamepadConfig.setModelNumber("1.0");
-  bleGamepadConfig.setSoftwareRevision("Software Rev v1.12");
+  bleGamepadConfig.setSoftwareRevision("Software Rev v1.13");
   bleGamepadConfig.setSerialNumber(serialNumber);
   bleGamepadConfig.setFirmwareRevision("2.0");
   bleGamepadConfig.setHardwareRevision("1.7");
@@ -247,6 +251,8 @@ void go_deep_sleep() {
   // Entering deep sleep procedure
   DEBUG_PRINTLN("Beginning deep sleep procedure ...");
   delay(5); //delay so we can print the serial message above.
+
+  wokeFromButton = true; // we set the RTC flag which is persistent during deep sleep so we can detect this when it wakes up
 
   // Configure Wake up by pushing either SELECT OR START Buttons 
   // START button RTC setup
@@ -313,11 +319,20 @@ void updateDpad() {
 void handleCombos() {
   static bool combo1PressedLast = false;  // keep state from previous loop
   static bool combo2PressedLast = false;  // keep state from previous loop
+  static bool combo3PressedLast = false;  // keep state from previous loop
+  static bool combo4PressedLast = false;  // keep state from previous loop
 
-  // ---- Combo 1 detection (Hand Side Toggle): buttons 1,2,5,6 ----
+  // ---- Combo 1 detection (Hand Side Toggle): buttons 1 + 2 + 5 + 6 ----
   bool combo1PressedNow = (buttonDebouncedState[0] == LOW && buttonDebouncedState[1] == LOW && buttonDebouncedState[4] == LOW && buttonDebouncedState[5] == LOW);   // Evaluate to true when all are LOW
-  // ---- Combo 2 detection (Mode Toggle): buttons 3,4,7,8 ----
+  
+  // ---- Combo 2 detection (Mode Toggle): buttons 3 + 4 + 7 + 8 ----
   bool combo2PressedNow = (buttonDebouncedState[2] == LOW && buttonDebouncedState[3] == LOW && buttonDebouncedState[6] == LOW && buttonDebouncedState[7] == LOW);   // Evaluate to true when all are LOW
+
+  // ---- Combo 3 detection (Restart): buttons SELECT + START + 8 ----
+  bool combo3PressedNow = (buttonDebouncedState[8] == LOW && buttonDebouncedState[9] == LOW && buttonDebouncedState[7] == LOW);   // Evaluate to true when all are LOW
+
+  // ---- Combo 4 detection (Enter deep sleep): buttons SELECT + START + 7 ----
+  bool combo4PressedNow = (buttonDebouncedState[8] == LOW && buttonDebouncedState[9] == LOW && buttonDebouncedState[6] == LOW);   // Evaluate to true when all are LOW
 
   // ---- Combo 1 Edge detection: toggle once per press ----
   if (combo1PressedNow && !combo1PressedLast) {
@@ -339,8 +354,22 @@ void handleCombos() {
                     : "Switched to AXIS mode");
   }
 
+  // ---- Combo 3 Edge detection: toggle once per press ----
+  if (combo3PressedNow && !combo3PressedLast) {
+    DEBUG_PRINTLN("Rebooting device now ...");
+    delay(3000);
+    ESP.restart();
+  }
+
+  // ---- Combo 4 Edge detection: toggle once per press ----
+  if (combo4PressedNow && !combo4PressedLast) {
+    go_deep_sleep();
+  }
+
   combo1PressedLast = combo1PressedNow;     // We make sure combo is not run again
   combo2PressedLast = combo2PressedNow;     // We make sure combo is not run again
+  combo3PressedLast = combo3PressedNow;     // We make sure combo is not run again
+  combo4PressedLast = combo4PressedNow;     // We make sure combo is not run again
 }
 
 // Function for the LED blinker
@@ -369,6 +398,7 @@ void handleBLE(){
       bleGamepad.setHat1(0);  // centered HAT
       bleGamepad.setLeftThumb(AXIS_CENTER, AXIS_CENTER);    //centered x,y axis
       bleGamepad.sendReport();
+      DEBUG_PRINTLN("Paired with a Host !");
       bleWasConnected = true;   //set flag so we don't run this again
     }
 
