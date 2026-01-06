@@ -72,18 +72,18 @@ Read on for instructions
 Specifications
 --------------
 
-Dual-axis joystick 
-10 buttons  
-Bluetooth HID gamepad device  
-Rechargeable Battery  
-Auto Power-off (5 minutes inactivity)  
-Switchable mode (DPAD - Axis)
-Switchable hand side (Right/Left hand side user - buttons can flip to other side)
-Pairing/Mode indication (Green LED)  
-Battery Charging (Red LED)  
-Active battery state reporting (FireBeetle2 ESP32-C6 board only)
-Serial Number reporting (so more than one device can get paired on one host)
-Ambidextrous design - Use the side you prefer 
+* Dual-axis joystick 
+* 10 buttons  
+* Bluetooth HID gamepad device  
+* Rechargeable Battery  
+* Auto Power-off (5 minutes inactivity)  
+* Switchable mode (DPAD - Axis)
+* Switchable hand side (Right/Left hand side user - buttons can flip to other side)
+* Pairing/Mode indication (Green LED)  
+* Battery Charging (Red LED)  
+* Active battery state reporting (FireBeetle2 ESP32-C6 board only)
+* Serial Number reporting (so more than one device can get paired on one host)
+* Ambidextrous design (Hand side swap Key mapping) - Use the side you prefer
 
 <br>
 
