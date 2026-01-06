@@ -190,15 +190,8 @@ Button Mapping
 --------------
 If your game or console allows, it would be a good idea to do some button mapping.
 By default the handle will be discovered as a dual axis Joystick and the buttons are numbered from left to right 1 to 4 and then from the right side to the left 5 to 8 like below.
-The buttons will flip over with a key combo, read below
-
-                            /\                      
-      BUTT 1                \/                BUTT 5
-              BUTT 2        ||        BUTT 6        
-      BUTT 3                ||                BUTT 7        
-              BUTT 4                  BUTT 8
-                      SELECT  START                                
-
+![Renegade Stick Button Mapping](/photos/button-mapping.jpg)
+The buttons can switch position with a key combo, read below
 The two front buttons from left to right are SELECT and START
 
 <br>
