@@ -229,6 +229,8 @@ Key Combos
 | ----------------- | ------------------------------------------- |
 | Switch Hand side | 1 + 2 + 5 + 6 |
 | Switch mode (axis/DPAD) | 3 + 4 + 7 + 8 |
+| Switch Off/enter Deep Sleep | SELECT + START + 7 |
+| Reboot board Firmware | SELECT + START + 8 |
 
 
 You can verify and test using gamepad testers. [Testing the Device](#testing-the-device).  
