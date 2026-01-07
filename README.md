@@ -148,7 +148,8 @@ ESP32-C6 (DFR1075) is the only one that supports active battery level monitoring
 <br>
 
 # Assembly Instructions
-You can find Assembly instructions with photos here --> <a href="/docs/assembly/Renegade Stick Assembly Guide.pdf" target="_blank">User Manual (PDF)</a>
+You can find Assembly instructions with photos here --> <a href="/assembly/Renegade Stick Assembly Guide.pdf" target="_blank">Renegade Stick Assembly Guide (PDF)</a>
+
 
 <br>
 
