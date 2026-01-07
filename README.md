@@ -191,9 +191,9 @@ Button Mapping
 --------------
 If your game or console allows, it would be a good idea to do some button mapping.
 By default the handle will be discovered as a dual axis Joystick and the buttons are numbered from left to right 1 to 4 and then from the right side to the left 5 to 8 like below.
-![Renegade Stick Button Mapping](/photos/button-mapping.jpg)
-The buttons can switch position with a key combo, read below
-The two front buttons from left to right are SELECT and START
+![Renegade Stick Button Mapping](/photos/button-mapping.jpg)  
+The buttons can switch position with a key combo, read [Mode of Operation / Combo Keys](#modes-of-operation--combo-keys)  
+The two front buttons from left to right are SELECT and START  
 
 <br>
 
@@ -225,6 +225,7 @@ Key Combos
 | Switch mode (axis/DPAD) | 3 + 4 + 7 + 8 |
 | Switch Off/enter Deep Sleep | SELECT + START + 7 |
 | Reboot board Firmware | SELECT + START + 8 |
+| WakeUp/Power On | SELECT + START |
 
 
 You can verify and test using gamepad testers. [Testing the Device](#testing-the-device).  
